@@ -18,15 +18,26 @@ api.interceptors.request.use(function (config) {
 });
 
 const templates = {
-
+  loginForm: document.querySelector('#login-form').content
 }
 
 const rootEl = document.querySelector('.root')
 
 // 페이지 그리는 함수 작성 순서
-// 1. 템플릿 복사
-// 2. 요소 선택
-// 3. 필요한 데이터 불러오기
-// 4. 내용 채우기
-// 5. 이벤트 리스너 등록하기
-// 6. 템플릿을 문서에 삽입
+function drawLoginForm() {
+
+  // 1. 템플릿 복사
+  // 문서 속 템플릿태그 안에있는 클래스네임이 로그인폼인 요소를 복제
+  const fragment = document.importNode(templates.loginForm, true)
+
+  // 2. 요소 선택
+  const loginFormEl = fragment.querySelector('.login-form')
+  // 3. 필요한 데이터 불러오기
+  // 4. 내용 채우기
+  // 5. 이벤트 리스너 등록하기
+  // 6. 템플릿을 문서에 삽입
+  rootEl.textContent = ''
+  rootEl.appendChild(loginFormEl)
+}
+
+drawLoginForm()
