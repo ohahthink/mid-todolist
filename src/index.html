@@ -19,6 +19,21 @@
       <button>로그인</button>
     </form>
   </template>
+
+  <template id="todo-list">
+    <form class="todo-list">
+      <input type="text" name="body">
+      <button>추가</button>
+    </form>
+    <ul class="todo-list"></ul>
+  </template>
+
+  <template id="todo-item">
+    <li class="todo-item">
+      <button class="delete">삭제</button>
+    </li>
+  </template>
+
   <div class="root"></div>
   <script src="./index.js"></script>
 </body>

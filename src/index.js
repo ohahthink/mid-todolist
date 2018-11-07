@@ -18,6 +18,7 @@ api.interceptors.request.use(function (config) {
 });
 
 const templates = {
+  // 로그인폼의 값으로 #login-form 컨텐츠를 가져옴
   loginForm: document.querySelector('#login-form').content
 }
 
@@ -27,7 +28,7 @@ const rootEl = document.querySelector('.root')
 function drawLoginForm() {
 
   // 1. 템플릿 복사
-  // 문서 속 템플릿태그 안에있는 클래스네임이 로그인폼인 요소를 복제
+  // 문서 속 템플릿태그 아이디가 로그인폼인 노드를 복제
   const fragment = document.importNode(templates.loginForm, true)
 
   // 2. 요소 선택
@@ -35,9 +36,10 @@ function drawLoginForm() {
   // 3. 필요한 데이터 불러오기
   // 4. 내용 채우기
   // 5. 이벤트 리스너 등록하기
+
   // 6. 템플릿을 문서에 삽입
   rootEl.textContent = ''
-  rootEl.appendChild(loginFormEl)
+  rootEl.appendChild(fragment)
 }
 
 drawLoginForm()
