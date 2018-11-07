@@ -3,7 +3,7 @@ import '@babel/polyfill' // 이 라인을 지우지 말아주세요!
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: process.env.API_URL
+  baseURL: 'https://agreeable-report-1.glitch.me'
 })
 
 api.interceptors.request.use(function (config) {
