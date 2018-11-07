@@ -36,6 +36,18 @@ function drawLoginForm() {
   // 3. 필요한 데이터 불러오기
   // 4. 내용 채우기
   // 5. 이벤트 리스너 등록하기
+  loginFormEl.addEventListener('submit', async e => {
+
+    // 이벤트를 실제로 일으킨 요소(login-form) 객체 안에있는 elements객체안에 name어트리뷰트가 username인 input요소의 값
+    const username = e.target.elements.username.value
+    // 이벤트를 실제로 일으킨 요소(login-form) 객체 안에있는 elements객체안에 name어트리뷰트가 password인 input요소의 값
+    const password = e.target.elements.password.value
+    const res = await api.post('/users/login', {
+      username,
+      password
+    })
+    localStorage.setItem('token', res.data.token)
+  })
 
   // 6. 템플릿을 문서에 삽입
   rootEl.textContent = ''
