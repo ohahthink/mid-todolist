@@ -3,7 +3,9 @@ import '@babel/polyfill' // 이 라인을 지우지 말아주세요!
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://agreeable-report-1.glitch.me'
+  // 바깥에서 주입해준 환경변수를 사용하는 코드
+  // 이 컴퓨터에서만 사용할 환경변수를 설정하기 위해서 .env 파일을 편집하면 된다.
+  baseURL: process.env.API_URL
 })
 
 api.interceptors.request.use(function (config) {
