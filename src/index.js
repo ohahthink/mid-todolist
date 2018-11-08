@@ -19,7 +19,8 @@ api.interceptors.request.use(function (config) {
 
 const templates = {
   // 로그인폼의 값으로 #login-form 컨텐츠를 가져옴
-  loginForm: document.querySelector('#login-form').content
+  loginForm: document.querySelector('#login-form').content,
+  todoList: document.querySelector('#todo-list').content
 }
 
 const rootEl = document.querySelector('.root')
@@ -47,12 +48,32 @@ function drawLoginForm() {
       password
     })
     localStorage.setItem('token', res.data.token)
+    drawTodoList()
   })
 
   // 6. 템플릿을 문서에 삽입
   rootEl.textContent = ''
   rootEl.appendChild(fragment)
+
 }
 
-
 drawLoginForm()
+
+
+function drawTodoList() {
+  // 1. 템플릿 복사
+  const fragment = document.importNode(templates.todoList, true)
+
+  // 2. 요소 선택
+  const todoList = fragment.querySelector('.todo-list')
+
+  // 3. 필요한 데이터 불러오기
+
+  // 4. 내용 채우기
+
+  // 5. 이벤트 리스너 등록하기
+
+  // 6. 템플릿을 문서에 삽입
+  rootEl.textContent = ''
+  rootEl.appendChild(fragment)
+}
