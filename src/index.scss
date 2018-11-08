@@ -1,23 +1,65 @@
 $main-color: rgb(223, 191, 13);
 
+// normalize
+* {
+  margin: 0;
+  padding: 0;
+  boder: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*::after {
+  margin: 0;
+  padding: 0;
+  boder: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
 body {
   background-color: $main-color;
 }
 
+h1 {
+  font-size: 1.4rem;
+  margin: 15px;
+}
 
 // 로그인 폼
-form {
-  background-color: skyblue;
-  position: relative;
-  input {
-    display: block;
-    margin-top: 5px;
-  }
+
+.login-form-title {
+  // background-color: pink;
+  text-align: center;
+  font-size: 2.4rem;
+  padding-top: 100px;
+}
+
+.login-form {
+  // background-color: skyblue;
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 400px;
+  text-align: center;
+
+  input,
   button {
-    width: 80px;
-    height: 45px;
-    position: absolute;
-    top: 0;
-    margin-left: 135px;
+    height: 37px;
+    border: none;
+    margin-top: 20px;
+    border-bottom: 2px solid rgb(32, 32, 30);
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  input {
+    width: 100%;
+    display: block;
+  }
+
+  button {
+    width: 120px;
+    margin-top: 30px;
+    height: 35px;
+    cursor: pointer;
   }
 }
