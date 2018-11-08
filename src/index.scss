@@ -1,5 +1,23 @@
-$main-color: skyblue;
+$main-color: rgb(223, 191, 13);
 
 body {
   background-color: $main-color;
+}
+
+
+// 로그인 폼
+form {
+  background-color: skyblue;
+  position: relative;
+  input {
+    display: block;
+    margin-top: 5px;
+  }
+  button {
+    width: 80px;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    margin-left: 135px;
+  }
 }

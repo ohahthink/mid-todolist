@@ -37,7 +37,7 @@ function drawLoginForm() {
   // 4. 내용 채우기
   // 5. 이벤트 리스너 등록하기
   loginFormEl.addEventListener('submit', async e => {
-
+    e.preventDefault()
     // 이벤트를 실제로 일으킨 요소(login-form) 객체 안에있는 elements객체안에 name어트리뷰트가 username인 input요소의 값
     const username = e.target.elements.username.value
     // 이벤트를 실제로 일으킨 요소(login-form) 객체 안에있는 elements객체안에 name어트리뷰트가 password인 input요소의 값
@@ -53,5 +53,6 @@ function drawLoginForm() {
   rootEl.textContent = ''
   rootEl.appendChild(fragment)
 }
+
 
 drawLoginForm()
