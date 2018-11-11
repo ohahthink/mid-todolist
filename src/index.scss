@@ -26,19 +26,21 @@ h1 {
   margin: 15px;
 }
 
+
 // 로그인 폼
+
 
 .login-form-title {
   // background-color: pink;
   text-align: center;
   font-size: 2.4rem;
-  padding-top: 130px;
+  margin-top: 210px;
 }
 
 .login-form {
   // background-color: skyblue;
   margin: 0 auto;
-  padding-top: 30px;
+  margin-top: 30px;
   width: 400px;
   text-align: center;
 
@@ -46,13 +48,13 @@ h1 {
   button {
     height: 37px;
     border: none;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
     border-bottom: 2px solid rgb(32, 32, 30);
     background-color: rgba(255, 255, 255, 0);
   }
 
   input {
-    width: 100%;
+    width: 300px;
     display: block;
   }
 
@@ -64,3 +66,4 @@ h1 {
     cursor: pointer;
   }
 }
+

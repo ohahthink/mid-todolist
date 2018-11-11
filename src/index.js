@@ -58,7 +58,8 @@ function drawLoginForm() {
 }
 
 
-function drawTodoList() {
+async function drawTodoList() {
+  // const res = await api.get('/todos')
   // 1. 템플릿 복사
   const fragment = document.importNode(templates.todoList, true)
 
@@ -71,13 +72,13 @@ function drawTodoList() {
   // 4. 내용 채우기
 
   // 5. 이벤트 리스너 등록하기
-  // todoList.addEventListener('submit', async e => {
-  //   e.preventDefault()
-  //   const body = e.target.elements.body.value
-  //   const res = await api.post('/todos', {
-  //     body
-  //   })
-  // })
+  todoListEl.addEventListener('submit', async e => {
+    e.preventDefault()
+    const body = e.target.elements.body.value
+    const res = await api.post('/todos', {
+      body
+    })
+  })
 
   // 6. 템플릿을 문서에 삽입
   rootEl.textContent = ''
